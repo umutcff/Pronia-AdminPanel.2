@@ -1,0 +1,27 @@
+﻿@model ShippingItem
+<div class="container">
+    <div class="row">
+        <form method="post" asp-action="Create" asp-controller="ShippingItem">
+            <div class="form-group">
+                <label>Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Title">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input asp-for="Description" class="form-control" placeholder="Description">
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <label>ImagePath</label>
+                <input asp-for="ImagePath" class="form-control" placeholder="ImagePath">
+                <span class="text-danger" asp-validation-for="ImagePath"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
