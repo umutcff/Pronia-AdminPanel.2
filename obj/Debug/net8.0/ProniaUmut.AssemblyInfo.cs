@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProniaUmut")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5f4013db88de6179a5c59619b36be25f891450e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b769703cc9beb1ec40e7264bba61d573bf47bfb5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProniaUmut")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProniaUmut")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

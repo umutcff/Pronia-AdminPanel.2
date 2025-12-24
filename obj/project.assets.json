@@ -7355,11 +7355,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Umut\\source\\repos\\ProniaUmut\\ProniaUmut.csproj",
+      "projectUniqueName": "C:\\Users\\Umut\\Source\\Repos\\Pronia-AdminPanel.2\\ProniaUmut.csproj",
       "projectName": "ProniaUmut",
-      "projectPath": "C:\\Users\\Umut\\source\\repos\\ProniaUmut\\ProniaUmut.csproj",
+      "projectPath": "C:\\Users\\Umut\\Source\\Repos\\Pronia-AdminPanel.2\\ProniaUmut.csproj",
       "packagesPath": "C:\\Users\\Umut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Umut\\source\\repos\\ProniaUmut\\obj\\",
+      "outputPath": "C:\\Users\\Umut\\Source\\Repos\\Pronia-AdminPanel.2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
