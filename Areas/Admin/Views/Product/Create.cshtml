@@ -1,7 +1,9 @@
-﻿@model Product
+﻿
+@model ProductCreateVM
+
 <div class="container">
     <div class="row">
-        <form method="post" asp-action="Create" asp-controller="Product">
+        <form method="post" asp-action="Create" asp-controller="Product" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Name</label>
                 <input asp-for="Name" class="form-control" placeholder="Name">
@@ -13,9 +15,14 @@
                 <span class="text-danger" asp-validation-for="Description"></span>
             </div>
             <div class="form-group">
-                <label>ImagePath</label>
-                <input asp-for="ImagePath" class="form-control" placeholder="ImagePath">
-                <span class="text-danger" asp-validation-for="ImagePath"></span>
+                <label>Main Image</label>
+                <input asp-for="MainImage" class="form-control" placeholder="ImagePath">
+                <span class="text-danger" asp-validation-for="MainImage"></span>
+            </div>
+            <div class="form-group">
+                <label>Hover Image</label>
+                <input asp-for="HoverImage" class="form-control" placeholder="ImagePath">
+                <span class="text-danger" asp-validation-for="HoverImage"></span>
             </div>
             <div class="form-group">
                 <label>Price</label>

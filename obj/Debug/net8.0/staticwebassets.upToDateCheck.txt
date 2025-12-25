@@ -969,6 +969,7 @@ wwwroot\assets\images\testimonial\icon\quotation.png
 wwwroot\assets\images\testimonial\user\1.png
 wwwroot\assets\images\testimonial\user\2.png
 wwwroot\assets\images\testimonial\user\3.png
+wwwroot\assets\images\website-images\0024bd79-b5c1-4277-9186-6952d78dbfbecat-download.jpg
 wwwroot\assets\images\website-images\1--1rnu4p.png
 wwwroot\assets\images\website-images\1-1-120x120.webp
 wwwroot\assets\images\website-images\1-1-1820x443.jpg
@@ -1009,6 +1010,7 @@ wwwroot\assets\images\website-images\1-7-270x300.jpg
 wwwroot\assets\images\website-images\1-8-270x300.jpg
 wwwroot\assets\images\website-images\1-9-270x300.jpg
 wwwroot\assets\images\website-images\1.png
+wwwroot\assets\images\website-images\139a5ca1-8dd4-4622-8feb-4222a7cf9381cat-download.jpg
 wwwroot\assets\images\website-images\2-1-370x270.webp
 wwwroot\assets\images\website-images\2-1-70x78.png
 wwwroot\assets\images\website-images\2-2-370x270.webp
@@ -1016,9 +1018,19 @@ wwwroot\assets\images\website-images\2-2-70x78.png
 wwwroot\assets\images\website-images\2-3-70x78.png
 wwwroot\assets\images\website-images\2.png
 wwwroot\assets\images\website-images\3.png
+wwwroot\assets\images\website-images\4e61cdbb-bf78-4255-af98-2ed93d99ec25cat-download.jpg
+wwwroot\assets\images\website-images\579f5f73-fb13-4766-bbd7-1208dce46cb8cat-download.jpg
+wwwroot\assets\images\website-images\9c8f2022-2e94-43e5-8f7a-1d6e6900b987cat-download.jpg
+wwwroot\assets\images\website-images\9ef6c5c0-23d2-4184-9ab7-caf5c95a0cd8cat-download.jpg
+wwwroot\assets\images\website-images\c6a3d9f7-94ad-4f97-a600-e7d7b7c7742acat-download.jpg
 wwwroot\assets\images\website-images\car.png
 wwwroot\assets\images\website-images\card.png
+wwwroot\assets\images\website-images\ce19d38a-d56a-4a70-b94d-247e9d388a58cat-download.jpg
 wwwroot\assets\images\website-images\dark.png
+wwwroot\assets\images\website-images\df36262a-448b-4464-9ff3-f724b5bb46a8cat-download.jpg
+wwwroot\assets\images\website-images\ebfe7b3f-9e7e-4c4c-8fa3-2eb2a1350b5acat-download.jpg
+wwwroot\assets\images\website-images\f32d1a02-1e0a-4061-b202-d7aa328f0020cat-download.jpg
+wwwroot\assets\images\website-images\fbf7680a-f6a5-4fd0-9375-adea26c2784bcat-download.jpg
 wwwroot\assets\images\website-images\quotation.png
 wwwroot\assets\images\website-images\service.png
 wwwroot\assets\js\main.js
@@ -1069,3 +1081,9 @@ wwwroot\assets\scss\_slider.scss
 wwwroot\assets\scss\_testimonial.scss
 wwwroot\assets\scss\_variables.scss
 wwwroot\assets\scss\_wishlist.scss
+wwwroot\assets\images\website-images\10267f00-dfcf-4974-8023-200ba769d257cat-download.jpg
+wwwroot\assets\images\website-images\169985d2-9b72-4ab1-b3a9-bf8c17880476cat-download.jpg
+wwwroot\assets\images\website-images\335f678d-b53d-47dd-93f8-d08775add236cat-download.jpg
+wwwroot\assets\images\website-images\3444c28f-5b9d-4ba0-b665-797bddbdace7cat-download.jpg
+wwwroot\assets\images\website-images\5bcedf9d-f64b-4bf2-96f8-e59fb6000bd9cat-download.jpg
+wwwroot\assets\images\website-images\7c3aea20-4ea8-4739-9b44-e5cad96c2a89cat-download.jpg

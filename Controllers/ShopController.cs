@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ProniaUmut.Contexts;
 
 namespace ProniaUmut.Controllers
 {
-    public class ShopController : Controller
+    public class ShopController(AppDBContext _context) : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var products=await _context.Products.ToListAsync();
+            return View(products);
         }
     }
 }
