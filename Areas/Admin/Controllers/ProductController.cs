@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProniaUmut.Contexts;
+using ProniaUmut.Helpers;
 using ProniaUmut.Models;
 using ProniaUmut.ViewModels.ProductViewModel;
 
@@ -15,13 +16,30 @@ namespace ProniaUmut.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var products = await _context.Products.Include(x => x.Category).ToListAsync();
-            return View(products);
+
+            List<ProductGetVM> result = new List<ProductGetVM>();
+            foreach (var product in products)
+            {
+                ProductGetVM vm = new ProductGetVM()
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Description = product.Description,
+                    Price = product.Price,
+                    CategoryName = product.Category.Name,
+                    MainImagePath = product.MainImagePath,
+                    HoverImagePath = product.HoverImagePath,
+                };
+                result.Add(vm);
+            }
+
+            return View(result);
         }
 
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            await SendCategories();
+            await SendItems();
             return View();
         }
 
@@ -29,32 +47,45 @@ namespace ProniaUmut.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
-            await SendCategories();
+            await SendItems();
 
             if (!ModelState.IsValid)
             {
                 return View(vm);
             }
 
-            if (!vm.MainImage.ContentType.Contains("image"))
+
+            foreach (var tagId in vm.TagIds)
+            {
+                var isExistTag = await _context.Tags.AnyAsync(x => x.Id == tagId);
+                if (!isExistTag)
+                {
+                    ModelState.AddModelError("TagIds", "Bele bir Tag tapilmadi!");
+                    return View(vm);
+                }
+            }
+
+
+
+            if (!vm.MainImage.CheckType())
             {
                 ModelState.AddModelError("MainImage", "Yalniz sekil daxil ede bilersen!");
                 return View(vm);
             }
 
-            if (vm.MainImage.Length > 3 * 1024 * 1024)
+            if (!vm.MainImage.CheckSize(2))
             {
                 ModelState.AddModelError("MainImage", "Sekil 3-Mb-dan artiq ola bilmez!");
                 return View(vm);
             }
 
-            if (!vm.HoverImage.ContentType.Contains("image"))
+            if (!vm.HoverImage.CheckType())
             {
                 ModelState.AddModelError("HoverImage", "Yalniz sekil daxil ede bilersen!");
                 return View(vm);
             }
 
-            if (vm.HoverImage.Length > 3 * 1024 * 1024)
+            if (!vm.HoverImage.CheckSize(2))
             {
                 ModelState.AddModelError("HoverImage", "Sekil 3-Mb-dan artiq ola bilmez!");
                 return View(vm);
@@ -80,7 +111,18 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 Price = vm.Price,
                 MainImagePath = uniqueMainPath,
                 HoverImagePath = uniqueHoverPath,
+                ProductTags = [],
             };
+
+            foreach (var tagId in vm.TagIds)
+            {
+                ProductTag productTag = new ProductTag()
+                {
+                    TagId = tagId,
+                    Product = product
+                };
+                product.ProductTags.Add(productTag);
+            }
 
             await _context.Products.AddAsync(product);
 
@@ -125,37 +167,111 @@ namespace ProniaUmut.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            await SendCategories();
+            await SendItems();
             var updatedProduct = await _context.Products.FindAsync(id);
             if (updatedProduct == null)
             {
                 return NotFound();
             }
-            return View(updatedProduct);
+
+
+            ProductUpdateVM vm = new ProductUpdateVM()
+            {
+                Id = updatedProduct.Id,
+                Name = updatedProduct.Name,
+                Description = updatedProduct.Description,
+                Price = updatedProduct.Price,
+                CategoryId = updatedProduct.CategoryId,
+                MainImagePath = updatedProduct.MainImagePath,
+                HoverImagePath = updatedProduct.HoverImagePath,
+            };
+            return View(vm);
+
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> Update(Product product)
+        public async Task<IActionResult> Update(ProductUpdateVM vm)
         {
-            await SendCategories();
+            await SendItems();
 
             if (!ModelState.IsValid)
             {
                 return View();
             }
 
-            var existProduct = await _context.Products.FindAsync(product.Id);
+
+            if (!vm.MainImage?.CheckType() ?? false)
+            {
+                ModelState.AddModelError("MainImage", "Yalniz sekil daxil ede bilersen!");
+                return View(vm);
+            }
+
+            if (!vm.MainImage?.CheckSize(2) ?? false)
+            {
+                ModelState.AddModelError("MainImage", "Sekil 3-Mb-dan artiq ola bilmez!");
+                return View(vm);
+            }
+
+            if (!vm.HoverImage?.CheckType() ?? false)
+            {
+                ModelState.AddModelError("HoverImage", "Yalniz sekil daxil ede bilersen!");
+                return View(vm);
+            }
+
+            if (!vm.HoverImage?.CheckSize(2) ?? false)
+            {
+                ModelState.AddModelError("HoverImage", "Sekil 3-Mb-dan artiq ola bilmez!");
+                return View(vm);
+            }
+
+            var existProduct = await _context.Products.Include(x=>x.ProductTags).FirstOrDefaultAsync(x=>x.Id==vm.Id);
             if (existProduct == null)
             {
                 return BadRequest();
             }
 
-            existProduct.Name = product.Name;
-            existProduct.Description = product.Description;
-            /*existProduct.ImagePath = product.ImagePath;*/
-            existProduct.Price = product.Price;
-            existProduct.CategoryId = product.CategoryId;
+            existProduct.Name = vm.Name;
+            existProduct.Description = vm.Description;
+            existProduct.Price = vm.Price;
+            existProduct.CategoryId = vm.CategoryId;
+            existProduct.ProductTags = [];
+
+            foreach(var tagId in vm.TagIds)
+            {
+                ProductTag productTag = new ProductTag()
+                {
+                    TagId = tagId,
+                    ProductId=existProduct.Id,
+                };
+
+                existProduct.ProductTags.Add(productTag);
+            }
+
+
+
+            string folderPath = Path.Combine(_envoriment.WebRootPath, "assets", "images", "website-images");
+
+            if (vm.MainImage != null)
+            {
+                string newMainImagePath = await vm.MainImage.SaveFileAsync(folderPath);
+
+                string existMainPath = Path.Combine(folderPath, existProduct.MainImagePath);
+                ExtensionMethods.DeleteFile(existMainPath);
+
+                existProduct.MainImagePath = newMainImagePath;
+            }
+
+            if (vm.HoverImage != null)
+            {
+                string newHoverImagePath = await vm.HoverImage.SaveFileAsync(folderPath);
+
+                string existHoverPath = Path.Combine(folderPath, existProduct.HoverImagePath);
+                ExtensionMethods.DeleteFile(existHoverPath);
+
+                existProduct.HoverImagePath = newHoverImagePath;
+            }
+
 
             _context.Products.Update(existProduct);
             await _context.SaveChangesAsync();
@@ -163,12 +279,38 @@ namespace ProniaUmut.Areas.Admin.Controllers
         }
 
 
+        public async Task<IActionResult> Detail(int id)
+        {
+            var product = await _context.Products.Select(product => new ProductGetVM()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                CategoryName = product.Category.Name,
+                MainImagePath = product.MainImagePath,
+                HoverImagePath = product.HoverImagePath,
+                TagNames = product.ProductTags.Select(x => x.Tag.Name).ToList()
+            }).FirstOrDefaultAsync(x => x.Id == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return View(product);
+        }
 
 
-        private async Task SendCategories()
+
+
+
+        private async Task SendItems()
         {
             var categories = await _context.Categories.ToListAsync();
             ViewBag.Categories = categories;
+
+            var tags = await _context.Tags.ToListAsync();
+            ViewBag.Tags = tags;
         }
     }
 }

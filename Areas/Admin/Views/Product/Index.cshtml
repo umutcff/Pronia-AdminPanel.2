@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model List<ProductGetVM>
 
 <div class="container">
     <div class="row">
@@ -17,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Product product in Model)
+                @foreach (ProductGetVM product in Model)
                 {
                     <tr>
                         <th scope="row">@product.Id</th>
@@ -26,10 +26,11 @@
                         <td> <img src="~/assets/images/website-images/@product.MainImagePath" width="40" ,height="40" alt="Alternate Text" /></td>
                         <td> <img src="~/assets/images/website-images/@product.HoverImagePath" width="40" ,height="40" alt="Alternate Text" /></td> 
                         <td>@product.Price</td>
-                        <td>@product.Category.Name</td>
+                        <td>@product.CategoryName</td>
                         <td>
-                            <a class="btn btn-info" asp-controller="Product" asp-action="Update" asp-route-id="@product.Id">Update</a>
-                            <a class="btn btn-danger deleteBtn" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                            <a class="btn btn-primary" asp-controller="Product" asp-action="Detail" asp-route-id="@product.Id"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-info" asp-controller="Product" asp-action="Update" asp-route-id="@product.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="btn btn-danger deleteBtn" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 }

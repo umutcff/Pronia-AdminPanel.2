@@ -7,7 +7,7 @@ namespace ProniaUmut.ViewModels.ProductViewModel
 {
     public class ProductCreateVM
     {
-       [Required]
+       public int Id { get; set; }
        public string Name { get; set; }
        [Required]
        public string Description { get; set; }
@@ -19,6 +19,7 @@ namespace ProniaUmut.ViewModels.ProductViewModel
        [Required]
        public int CategoryId { get; set; }
 
+       public List<int> TagIds { get; set; }
        public IFormFile MainImage { get; set; }
        public IFormFile HoverImage { get; set; }
        public List<IFormFile>? AdditionalImage { get; set; }
