@@ -299,7 +299,7 @@ namespace ProniaUmut.Areas.Admin.Controllers
             existProduct.Price = vm.Price;
             existProduct.CategoryId = vm.CategoryId;
             existProduct.ProductTags = [];
-            existProduct.ProductImages = [];
+            /*existProduct.ProductImages = [];*/
 
             foreach (var tagId in vm.TagIds)
             {
