@@ -17,6 +17,8 @@ namespace ProniaUmut.Contexts
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<ProductRating> ProductRatings { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
 
     }
 }

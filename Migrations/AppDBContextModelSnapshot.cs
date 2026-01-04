@@ -98,6 +98,29 @@ namespace ProniaUmut.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("ProniaUmut.Models.ProductRating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RatingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("RatingId");
+
+                    b.ToTable("ProductRatings");
+                });
+
             modelBuilder.Entity("ProniaUmut.Models.ProductTag", b =>
                 {
                     b.Property<int>("Id")
@@ -119,6 +142,22 @@ namespace ProniaUmut.Migrations
                     b.HasIndex("TagId");
 
                     b.ToTable("ProductTags");
+                });
+
+            modelBuilder.Entity("ProniaUmut.Models.Rating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("StarCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("ProniaUmut.Models.ShippingItem", b =>
@@ -185,6 +224,25 @@ namespace ProniaUmut.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("ProniaUmut.Models.ProductRating", b =>
+                {
+                    b.HasOne("ProniaUmut.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProniaUmut.Models.Rating", "Rating")
+                        .WithMany("ProductRatings")
+                        .HasForeignKey("RatingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Rating");
+                });
+
             modelBuilder.Entity("ProniaUmut.Models.ProductTag", b =>
                 {
                     b.HasOne("ProniaUmut.Models.Product", "Product")
@@ -209,6 +267,11 @@ namespace ProniaUmut.Migrations
                     b.Navigation("ProductImages");
 
                     b.Navigation("ProductTags");
+                });
+
+            modelBuilder.Entity("ProniaUmut.Models.Rating", b =>
+                {
+                    b.Navigation("ProductRatings");
                 });
 
             modelBuilder.Entity("ProniaUmut.Models.Tag", b =>

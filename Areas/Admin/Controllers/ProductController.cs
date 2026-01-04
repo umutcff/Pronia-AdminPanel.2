@@ -91,16 +91,37 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 return View(vm);
             }
 
-            string uniqueMainPath = Guid.NewGuid().ToString() + vm.MainImage.FileName;
-            string mainPath = $@"{_envoriment.WebRootPath}/assets/images/website-images/{uniqueMainPath}";
-            FileStream mainStream = new FileStream(mainPath, FileMode.Create);
-            await vm.MainImage.CopyToAsync(mainStream);
+            foreach (var addImages in vm.AdditionalImages)
+            {
+                if (!addImages.CheckType())
+                {
+                    ModelState.AddModelError("AdditionalImages", "Yalniz sekil daxil ede bilersen!");
+                    return View(vm);
+                }
 
+                if (!addImages.CheckSize(2))
+                {
+                    ModelState.AddModelError("AdditionalImages", "Sekil 3-Mb-dan artiq ola bilmez!");
+                    return View(vm);
+                }
 
-            string uniqueHoverPath = Guid.NewGuid().ToString() + vm.HoverImage.FileName;
-            string hoverPath = $@"{_envoriment.WebRootPath}/assets/images/website-images/{uniqueHoverPath}";
-            FileStream hoverStream = new FileStream(hoverPath, FileMode.Create);
-            await vm.HoverImage.CopyToAsync(hoverStream);
+            }
+
+            string folderPath = Path.Combine(_envoriment.WebRootPath, "assets", "images", "website-images");
+
+            /* string uniqueMainPath = Guid.NewGuid().ToString() + vm.MainImage.FileName;
+             string mainPath = $@"{_envoriment.WebRootPath}/assets/images/website-images/{uniqueMainPath}";
+             FileStream mainStream = new FileStream(mainPath, FileMode.Create);
+             await vm.MainImage.CopyToAsync(mainStream);
+
+             string uniqueHoverPath = Guid.NewGuid().ToString() + vm.HoverImage.FileName;
+             string hoverPath = $@"{_envoriment.WebRootPath}/assets/images/website-images/{uniqueHoverPath}";
+             FileStream hoverStream = new FileStream(hoverPath, FileMode.Create);
+             await vm.HoverImage.CopyToAsync(hoverStream);*/
+
+            string uniqueMainPath = await vm.MainImage.SaveFileAsync(folderPath);
+            string uniqueHoverPath = await vm.HoverImage.SaveFileAsync(folderPath);
+
 
 
             Product product = new()
@@ -112,7 +133,23 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 MainImagePath = uniqueMainPath,
                 HoverImagePath = uniqueHoverPath,
                 ProductTags = [],
+                ProductImages = []
             };
+
+
+            foreach (var img in vm.AdditionalImages)
+            {
+                string uniqueImagePath = await img.SaveFileAsync(folderPath);
+
+                ProductImage productImage = new()
+                {
+                    ImagePath = uniqueImagePath,
+                    Product = product
+                };
+
+                product.ProductImages.Add(productImage);
+
+            }
 
             foreach (var tagId in vm.TagIds)
             {
@@ -135,7 +172,7 @@ namespace ProniaUmut.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var deletedProduct = await _context.Products.FindAsync(id);
+            var deletedProduct = await _context.Products.Include(x => x.ProductImages).FirstOrDefaultAsync(x => x.Id == id);
 
             if (deletedProduct == null)
             {
@@ -147,15 +184,19 @@ namespace ProniaUmut.Areas.Admin.Controllers
             string folderPath = Path.Combine(_envoriment.WebRootPath, "assets", "images", "web-images");
             string deleteMainPath = Path.Combine(folderPath, deletedProduct.MainImagePath);
             string deleteHoverPath = Path.Combine(folderPath, deletedProduct.HoverImagePath);
-            if (System.IO.File.Exists(deleteMainPath))
+
+
+            ExtensionMethods.DeleteFile(deleteMainPath);
+            ExtensionMethods.DeleteFile(deleteHoverPath);
+
+            foreach (var prImage in deletedProduct.ProductImages)
             {
-                System.IO.File.Delete(deleteMainPath);
+                string imagePath = Path.Combine(folderPath, prImage.ImagePath);
+
+                ExtensionMethods.DeleteFile(imagePath);
+
             }
 
-            if (System.IO.File.Exists(deleteHoverPath))
-            {
-                System.IO.File.Delete(deleteHoverPath);
-            }
 
 
             await _context.SaveChangesAsync();
@@ -168,7 +209,11 @@ namespace ProniaUmut.Areas.Admin.Controllers
         public async Task<IActionResult> Update(int id)
         {
             await SendItems();
-            var updatedProduct = await _context.Products.FindAsync(id);
+
+
+            var updatedProduct = await _context.Products.Include(x => x.ProductImages).FirstOrDefaultAsync(x => x.Id == id);
+
+
             if (updatedProduct == null)
             {
                 return NotFound();
@@ -184,6 +229,8 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 CategoryId = updatedProduct.CategoryId,
                 MainImagePath = updatedProduct.MainImagePath,
                 HoverImagePath = updatedProduct.HoverImagePath,
+                AdditionalImagePaths = updatedProduct.ProductImages.Select(x => x.ImagePath).ToList(),
+                AdditionalImageIds = updatedProduct.ProductImages.Select(x => x.Id).ToList()
             };
             return View(vm);
 
@@ -197,7 +244,7 @@ namespace ProniaUmut.Areas.Admin.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(vm);
             }
 
 
@@ -225,7 +272,23 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 return View(vm);
             }
 
-            var existProduct = await _context.Products.Include(x=>x.ProductTags).FirstOrDefaultAsync(x=>x.Id==vm.Id);
+            foreach (var addImages in vm.Images ?? [])
+            {
+                if (!addImages.CheckType())
+                {
+                    ModelState.AddModelError("AdditionalImages", "Yalniz sekil daxil ede bilersen!");
+                    return View(vm);
+                }
+
+                if (!addImages.CheckSize(2))
+                {
+                    ModelState.AddModelError("AdditionalImages", "Sekil 3-Mb-dan artiq ola bilmez!");
+                    return View(vm);
+                }
+
+            }
+
+            var existProduct = await _context.Products.Include(x => x.ProductTags).Include(x => x.ProductImages).FirstOrDefaultAsync(x => x.Id == vm.Id);
             if (existProduct == null)
             {
                 return BadRequest();
@@ -236,17 +299,19 @@ namespace ProniaUmut.Areas.Admin.Controllers
             existProduct.Price = vm.Price;
             existProduct.CategoryId = vm.CategoryId;
             existProduct.ProductTags = [];
+            existProduct.ProductImages = [];
 
-            foreach(var tagId in vm.TagIds)
+            foreach (var tagId in vm.TagIds)
             {
                 ProductTag productTag = new ProductTag()
                 {
                     TagId = tagId,
-                    ProductId=existProduct.Id,
+                    ProductId = existProduct.Id,
                 };
 
                 existProduct.ProductTags.Add(productTag);
             }
+
 
 
 
@@ -272,6 +337,34 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 existProduct.HoverImagePath = newHoverImagePath;
             }
 
+            var existImages=existProduct.ProductImages.ToList();
+
+            foreach (var image in existImages)
+            {
+                var isExistImageId = vm.AdditionalImageIds?.Any(x => x == image.Id) ?? false;
+
+                if (!isExistImageId)
+                {
+                    string deletedImagePath = Path.Combine(folderPath, image.ImagePath);
+                    ExtensionMethods.DeleteFile(deletedImagePath);
+                    existProduct.ProductImages.Remove(image);
+                  
+                }
+            }
+
+            foreach (var img in vm.Images ?? [])
+            {
+                string uniqueImagePath = await img.SaveFileAsync(folderPath);
+
+                ProductImage productImage = new()
+                {
+                    ImagePath = uniqueImagePath,
+                    ProductId = existProduct.Id
+                };
+
+                existProduct.ProductImages.Add(productImage);
+
+            }
 
             _context.Products.Update(existProduct);
             await _context.SaveChangesAsync();
@@ -290,7 +383,8 @@ namespace ProniaUmut.Areas.Admin.Controllers
                 CategoryName = product.Category.Name,
                 MainImagePath = product.MainImagePath,
                 HoverImagePath = product.HoverImagePath,
-                TagNames = product.ProductTags.Select(x => x.Tag.Name).ToList()
+                TagNames = product.ProductTags.Select(x => x.Tag.Name).ToList(),
+                AdditionalImagePaths = product.ProductImages.Select(x => x.ImagePath).ToList()
             }).FirstOrDefaultAsync(x => x.Id == id);
 
             if (product == null)
@@ -302,8 +396,6 @@ namespace ProniaUmut.Areas.Admin.Controllers
 
 
 
-
-
         private async Task SendItems()
         {
             var categories = await _context.Categories.ToListAsync();
@@ -311,6 +403,7 @@ namespace ProniaUmut.Areas.Admin.Controllers
 
             var tags = await _context.Tags.ToListAsync();
             ViewBag.Tags = tags;
+
         }
     }
 }

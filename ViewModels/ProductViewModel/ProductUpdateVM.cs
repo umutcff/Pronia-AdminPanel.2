@@ -12,10 +12,12 @@ namespace ProniaUmut.ViewModels.ProductViewModel
         public int CategoryId { get; set; }
         public IFormFile? MainImage { get; set; }
         public IFormFile? HoverImage { get; set; }
-        public List<IFormFile>? AdditionalImage { get; set; }
+        public List<IFormFile>? Images { get; set; }
         public string MainImagePath { get; set; }
         public string HoverImagePath { get; set; }
-        public List<int> TagIds { get; set; }
+        public List<int> TagIds { get; set; } = [];
+        public List<string>? AdditionalImagePaths { get; set; } = [];
+        public List<int> AdditionalImageIds { get; set; } = [];
     }
 }
 

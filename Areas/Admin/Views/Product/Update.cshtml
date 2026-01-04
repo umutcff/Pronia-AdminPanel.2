@@ -29,6 +29,30 @@
 				<span class="text-danger" asp-validation-for="HoverImage"></span>
 			</div>
 			<div class="form-group">
+
+				@for (int i = 0; i < Model.AdditionalImagePaths?.Count; i++)
+				{
+					<div class="imageDiv" style="display:inline">
+
+						<input type="hidden" asp-for="AdditionalImagePaths" value="@Model.AdditionalImagePaths[i]" />
+						<input type="hidden" asp-for="AdditionalImageIds" value="@Model.AdditionalImageIds[i]" />
+
+						<div class="image" style="position:relative;width:50px;height:50px;display:inline">
+							<img class="mb-3" src="~/assets/images/website-images/@Model.AdditionalImagePaths[i]" width="150" height="90" />
+							<span style="position:absolute;right:6px;top:-40px;padding:1px;background-color:darkred;color:white;font-size:10px;cursor:pointer" class="closeButton">X</span>
+
+						</div>
+					</div>
+				}
+
+
+				<label for="Images">Images</label>
+				<input asp-for="Images" class="form-control" id="Images">
+				<span class="text-danger" asp-validation-for="Images"></span> 
+			</div>
+
+
+			<div class="form-group">
 				<label>Price</label>
 				<input asp-for="Price" class="form-control" placeholder="Price">
 				<span class="text-danger" asp-validation-for="Price"></span>
@@ -57,4 +81,15 @@
 		</form>
 	</div>
 </div>
+
+
+<script>
+	const closeButton=document.querySelectorAll(".closeButton");
+	closeButton.forEach(x=>{
+		x.addEventListener("click",(e)=>{
+			e.preventDefault();
+			x.parentElement.parentElement.remove();
+		})
+	})
+</script>
 

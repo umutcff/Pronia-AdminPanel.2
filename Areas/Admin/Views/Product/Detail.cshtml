@@ -37,6 +37,13 @@
 					<h6 class="fw-bold text-success mt-auto">
 						@Model.Price $
 					</h6>
+
+					<h3>Additional Images</h3>
+						@foreach(var imagePath in Model.AdditionalImagePaths)
+						{
+							<img src="~/assets/images/website-images/@imagePath"
+								 class="card-img-top" alt="Card image cap">
+						}
 				</div>
 
 				<div class="card-footer bg-white border-0 text-center">
@@ -44,7 +51,7 @@
 					   asp-action="Detail"
 					   asp-route-id="@Model.Id"
 					   class="btn btn-sm btn-outline-primary w-100">
-						Ətraflı bax
+						More
 					</a>
 				</div>
 			</div>
