@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProniaUmut.Contexts;
+using ProniaUmut.Models;
 
 namespace ProniaUmut
 {
@@ -15,6 +17,15 @@ namespace ProniaUmut
             {
                 option.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
             });
+
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequiredLength = 6;
+                options.Lockout.MaxFailedAccessAttempts = 4;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            }).AddEntityFrameworkStores<AppDBContext>().AddDefaultTokenProviders();
 
             var app = builder.Build();
 

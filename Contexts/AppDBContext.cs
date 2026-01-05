@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.IdentityModel.Tokens;
 using ProniaUmut.Models;
 
 namespace ProniaUmut.Contexts
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : IdentityDbContext<AppUser>
     {
         public AppDBContext(DbContextOptions options) : base(options)
         {

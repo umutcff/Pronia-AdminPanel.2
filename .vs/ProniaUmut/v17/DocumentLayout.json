@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\viewmodels\\productviewmodel\\productgetvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:viewmodels\\productviewmodel\\productgetvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\views\\shop\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:views\\shop\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\viewmodels\\userviewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:viewmodels\\userviewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\viewmodels\\userviewmodels\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:viewmodels\\userviewmodels\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\models\\productrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:models\\productrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:areas\\admin\\views\\product\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\viewmodels\\productviewmodel\\productupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:viewmodels\\productviewmodel\\productupdatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\contexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:contexts\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|c:\\users\\umut\\source\\repos\\pronia-adminpanel.2\\models\\productrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9340A7C0-FEBA-4203-9B08-7DE2BFBAC5BD}|ProniaUmut.csproj|solutionrelative:models\\productrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,32 +50,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 247,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductGetVM.cs",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\ProductViewModel\\ProductGetVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\ProductViewModel\\ProductGetVM.cs",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\ProductViewModel\\ProductGetVM.cs",
-              "RelativeToolTip": "ViewModels\\ProductViewModel\\ProductGetVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\UserViewModels\\LoginVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\UserViewModels\\LoginVM.cs",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\UserViewModels\\LoginVM.cs",
+              "RelativeToolTip": "ViewModels\\UserViewModels\\LoginVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T06:50:59.979Z",
+              "WhenOpened": "2026-01-05T20:50:08.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Update.cshtml",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Areas\\Admin\\Views\\Product\\Update.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Product\\Update.cshtml",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Areas\\Admin\\Views\\Product\\Update.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Product\\Update.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAApwDIAAABCAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-04T05:14:07.583Z"
+              "WhenOpened": "2026-01-05T20:46:49.634Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -81,74 +86,92 @@
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
               "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-03T12:58:38.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Detail.cshtml",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\Shop\\Detail.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shop\\Detail.cshtml",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\Shop\\Detail.cshtml",
-              "RelativeToolTip": "Views\\Shop\\Detail.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-03T12:52:31.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ShopController.cs",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Controllers\\ShopController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ShopController.cs",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Controllers\\ShopController.cs",
-              "RelativeToolTip": "Controllers\\ShopController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAzwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T12:39:00.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductUpdateVM.cs",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\ProductViewModel\\ProductUpdateVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\ProductViewModel\\ProductUpdateVM.cs",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\ProductViewModel\\ProductUpdateVM.cs",
-              "RelativeToolTip": "ViewModels\\ProductViewModel\\ProductUpdateVM.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwA8AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T09:41:23.464Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAABwBAAAAAAAAAAApwC0BAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T06:55:29.087Z",
+              "WhenOpened": "2026-01-05T19:55:53.12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Models\\Rating.cs",
-              "RelativeDocumentMoniker": "Models\\Rating.cs",
-              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Models\\Rating.cs",
-              "RelativeToolTip": "Models\\Rating.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "RegisterVM.cs",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\UserViewModels\\RegisterVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\UserViewModels\\RegisterVM.cs",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\ViewModels\\UserViewModels\\RegisterVM.cs",
+              "RelativeToolTip": "ViewModels\\UserViewModels\\RegisterVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T06:32:48.362Z"
+              "WhenOpened": "2026-01-05T19:40:23.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\Auth\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Auth\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Views\\Auth\\Register.cshtml",
+              "RelativeToolTip": "Views\\Auth\\Register.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-05T19:31:52.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Umut\\Source\\Repos\\Pronia-AdminPanel.2\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Umut\\Source\\Repos\\Pronia-AdminPanel.2\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAkwFoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:28:11.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:11:13.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Contexts\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Contexts\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Contexts\\AppDBContext.cs",
+              "RelativeToolTip": "Contexts\\AppDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:07:42.996Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Models\\AppUser.cs",
+              "RelativeToolTip": "Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-05T19:01:19.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ProductRating.cs",
               "DocumentMoniker": "C:\\Users\\Umut\\source\\repos\\Pronia-AdminPanel.2\\Models\\ProductRating.cs",
               "RelativeDocumentMoniker": "Models\\ProductRating.cs",
@@ -156,7 +179,8 @@
               "RelativeToolTip": "Models\\ProductRating.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T06:35:34.923Z"
+              "WhenOpened": "2026-01-04T06:35:34.923Z",
+              "EditorCaption": ""
             }
           ]
         }

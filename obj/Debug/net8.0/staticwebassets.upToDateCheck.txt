@@ -1148,3 +1148,7 @@ wwwroot\assets\images\website-images\2a6a1a54-dc4d-4ef5-9d83-653186865846bird.jp
 wwwroot\assets\images\website-images\a13eaa88-2e99-42be-961c-77673c38c0c5cat-download.jpg
 wwwroot\assets\images\website-images\bd22c2d6-1392-4400-847b-fc5c3bcb700btree.jpg
 wwwroot\assets\images\website-images\e641d098-dd71-4f2d-a34b-fc3f81579144flower.jpg
+wwwroot\assets\images\website-images\03d4b47b-8858-4434-82e9-5f3905ded96dcat-download.jpg
+wwwroot\assets\images\website-images\c0fb3cf1-c52e-4cd2-9257-2b81e3f30d87download.jpg
+wwwroot\assets\images\website-images\d929e37f-29e4-4dc3-bf85-99b5cabe477cflower.jpg
+wwwroot\assets\images\website-images\d500ccc4-ee0c-4e1b-b53b-5617708f690btree.jpg
